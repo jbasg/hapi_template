@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/jbasg/hapi_template/issues"
   },
-  "homepage": "https://github.com/jbasg/hapi_template#readme"
+  "homepage": "https://github.com/jbasg/hapi_template#readme",
+  "dependencies": {
+    "hapi" :  "^16.1.0",
+    "inert" : "^4.2.0",
+    "faye" : " ^1.2.0"
+  }
+
 }
