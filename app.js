@@ -5,7 +5,7 @@ const Hapi = require('hapi');
 const Inert = require('inert');
 
 
-const HTTP_PORT = 3000;
+const HTTP_PORT = 4000;
 const HTTP_PATH = './public/';
 
 const FAYE_ENABLED = true;
