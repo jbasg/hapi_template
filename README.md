@@ -9,9 +9,12 @@ Template Node Web Server with hapi , inert  and Faye.
 Template Web Application with Bootstrap,Jquery,knockout,vue and underscore (cdn resources)
 
 
-## Code Example
+## Configuration
 
-node app.js
+change port in HTTP_PORT const:
+
+const HTTP_PORT = 4000;
+
 
 ## Motivation
 
@@ -19,7 +22,11 @@ First Blood, template to help to initialize a hapi proyect with node.
 
 ## Installation
 
-npm install 
+git clone https://github.com/jbasg/hapi_template.git app_name
+cd app_name
+npm install
+
+node app.js 
 
 
 
