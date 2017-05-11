@@ -5,12 +5,14 @@ const Hapi = require('hapi');
 const Inert = require('inert');
 
 
+const Plugin_Base = require('./hapi_plugin_base_route');
+
+
 const HTTP_PORT = 4000;
 const HTTP_PATH = './public/';
 
 const FAYE_ENABLED = true;
 const FAYE_PATH = '/faye';
-
 
 
 const server = new Hapi.Server({
@@ -22,6 +24,7 @@ const server = new Hapi.Server({
         }
     }
 });
+
 server.connection({ port: HTTP_PORT });
 
 if (FAYE_ENABLED){
@@ -30,19 +33,21 @@ if (FAYE_ENABLED){
     bayeux.attach(server.listener);
 }
 
-server.register(Inert, () => {});
+//REGISTERED PLUGINS
+server.register([     Inert
+                    , Plugin_Base
+                ], () => {});
 
-server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-        directory: {
-            path: '.',
-            redirectToSlash: true,
-            index: true
-        }
-    }
-});
+// Server Method Sample
+server.method('add',function(a,b,next) {
+    return (next,null,a+b);
+})
+
+// Server App Sample
+server.app.app_name = 'hapi_template';
+
+
+
 
 server.start((err) => {
 
