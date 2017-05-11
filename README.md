@@ -23,7 +23,9 @@ First Blood, template to help to initialize a hapi proyect with node.
 ## Installation
 
 git clone https://github.com/jbasg/hapi_template.git app_name
+
 cd app_name
+
 npm install
 
 node app.js 
